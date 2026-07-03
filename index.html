@@ -31,15 +31,15 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#08080d;
-  --bg2:#0e0e16;
-  --bg3:#13131e;
-  --card:#111118;
+  --bg:#ffffff;
+  --bg2:#f5f5f8;
+  --bg3:#eeeeee;
+  --card:#ffffff;
   --p:#7c4dff;
   --p2:#9d70ff;
   --g:#00d4aa;
-  --text:#f0f0f5;
-  --muted:#8888a0;
+  --text:#0a0a0f;
+  --muted:#555566;
   --border:rgba(124,77,255,0.18);
   --border2:rgba(124,77,255,0.08);
   --gold:#f5c842;
@@ -259,6 +259,24 @@ footer a:hover{color:var(--p)}
   .hero-stats{grid-template-columns:1fr 1fr}
   .h-stat{padding:16px}
 }
+
+/* ===== TEMA CLARO — las zonas oscuras (nav, hero, footer, chatbot header,
+   labels de galería) conservan texto claro para mantener el contraste ===== */
+.nav{background:#0a0a0f !important}
+.nav-logo,.nav-ham{color:#f0f0f5}
+.nav-links a,.nav-mobile a{color:#9a9aae}
+.nav-links a:hover,.nav-mobile a:hover{color:#fff}
+.hero h1{color:#f0f0f5}
+.hero-tag,.hero-sub,.h-stat-l{color:#b0b0c0}
+.btn-ghost{color:#f0f0f5;border-color:rgba(255,255,255,.22)}
+.g-label{color:#f0f0f5}
+.cb-name{color:#f0f0f5}
+.cb-x{color:#9a9aae}
+footer{background:#0a0a0f}
+.f-logo{color:#f0f0f5}
+footer p,footer a{color:#9a9aae}
+footer a:hover{color:#fff}
+.sec-tag::before{background:rgba(0,0,0,.22)}
 </style>
 </head>
 <body>
@@ -272,10 +290,10 @@ footer a:hover{color:var(--p)}
 </div>
 
 <!-- NAV -->
-<nav class="nav" id="top">
-  <a href="#top" class="nav-logo">ÓPTICA<em>IA</em></a>
+<nav class="nav">
+  <a href="#inicio" class="nav-logo">ÓPTICA<em>IA</em></a>
   <ul class="nav-links">
-    <li><a href="#top">Inicio</a></li>
+    <li><a href="#inicio">Inicio</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#galeria">Galería</a></li>
     <li><a href="#mutuas">Mutuas</a></li>
@@ -287,7 +305,7 @@ footer a:hover{color:var(--p)}
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
   <div class="nav-mobile" id="navMobile">
-    <a href="#top" onclick="this.closest('.nav-mobile').classList.remove('open')">Inicio</a>
+    <a href="#inicio" onclick="this.closest('.nav-mobile').classList.remove('open')">Inicio</a>
     <a href="#servicios" onclick="this.closest('.nav-mobile').classList.remove('open')">Servicios</a>
     <a href="#galeria" onclick="this.closest('.nav-mobile').classList.remove('open')">Galería</a>
     <a href="#mutuas" onclick="this.closest('.nav-mobile').classList.remove('open')">Mutuas</a>
@@ -297,7 +315,7 @@ footer a:hover{color:var(--p)}
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="inicio">
   <div class="hero-bg">
     <img
       src="tu-optica-de-referencia-para-toda-la-familia.jpg"
@@ -310,11 +328,11 @@ footer a:hover{color:var(--p)}
     <div class="hero-badge"><div class="hero-badge-dot"></div>Lex disponible ahora</div>
     <div class="hero-tag">Óptica inteligente · Majadahonda</div>
     <h1>
-      TU ÓPTICA<br>
-      <span class="line-p">CON IA</span><br>
-      <span class="line-g">EN MADRID</span>
+      TU ÓPTICA Y<br>
+      <span class="line-p">VISIÓN EN</span><br>
+      <span class="line-g">NUESTRAS MANOS</span>
     </h1>
-    <p class="hero-sub">Primera revisión visual completamente gratuita. Más de 500 monturas. Lex IA gestiona tu cita en segundos, sin esperas.</p>
+    <p class="hero-sub">Óptica con Integración IA. Primera revisión visual completamente gratuita. Más de 500 monturas. Lex IA gestiona tu cita en segundos.</p>
     <div class="hero-btns">
       <button class="btn-p" onclick="openChat()">Pedir cita gratis</button>
       <button class="btn-ghost" onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">Ver servicios</button>
@@ -557,7 +575,7 @@ footer a:hover{color:var(--p)}
 
 <!-- FOOTER -->
 <footer>
-  <a href="#top" class="f-logo">ÓPTICA<em>IA</em></a>
+  <a href="#inicio" class="f-logo">ÓPTICA<em>IA</em></a>
   <p>© 2026 Óptica IA Majadahonda · Demo WhiteMoon</p>
   <a href="https://whitemoon.es">whitemoon.es</a>
 </footer>
